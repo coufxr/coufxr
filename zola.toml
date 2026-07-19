@@ -1,54 +1,79 @@
-# 站点的基础 URL；这是唯一必须配置的变量。
+# 站点的基础 URL（唯一必须配置的项）。
+# 生产环境请修改为实际域名，例如：https://blog.example.com
 base_url = "https://example.com"
 
-# 站点标题和描述；默认用于 feed。
+# 站点标题。
 title = "coufxr's blog"
+
+# 站点描述，用于 RSS Feed、SEO 以及 Open Graph。
 description = "今夜星光灿烂"
 
-# 默认语言；用于 feed。
-default_language = "en"
-
-# 站点使用的主题。
+# 使用的主题。
 theme = "anemone"
 
-# 如需覆盖默认输出目录 `public`，可设置为其他值（如："docs"）
-output_dir = "public"
-
-# 启用后，在（重新）构建时会保留输出目录根级别的点文件。
-# 启用此选项后，重建时也不会删除输出文件夹本身。
-preserve_dotfiles_in_output = false
-
-# 设为 "true" 时，站点根目录下 `sass` 目录中的 Sass 文件将被编译。
-# 主题目录中的 Sass 文件始终会被编译。
+# 编译项目根目录下的 sass/ 文件。
+# 主题中的 Sass 会始终编译，此选项控制项目自身的 Sass。
 compile_sass = true
 
-# 设为 "true" 时，会从 `default_language` 的页面和章节内容构建搜索索引。
-build_search_index = false
-
-# 页面的默认作者
+# 页面默认作者。
 author = "coufxr"
+
+# 构建时压缩 HTML
+minify_html = true
+
+# 自动生成 robots.txt
+generate_robots_txt = true
+
+# 自动生成 sitemap.xml
+generate_sitemap = true
+
 
 # 站点的分类法（taxonomy）及其默认语言的配置
 # 示例：
 #     taxonomies = [
-#       {name = "tags", feed = true}, # 每个标签将有各自的 feed
+#       {name = "tags", feed = true}, # feed = true 表示为该分类生成独立的 Atom Feed。
 #       {name = "tags"}, # 同名分类法可以在多种语言中使用
 #       {name = "categories", paginate_by = 5},  # 每个分类项每页 5 条
 #       {name = "authors"}, # 基本定义：无 feed 或分页
 #     ]
 #
-taxonomies = [{ name = "tags" }, { name = "categories" }]
+taxonomies = [
+    { name = "tags", feed = true },
+    { name = "categories" },
+]
 
 [markdown]
+# 支持 GitHub Alerts（> [!NOTE] 等）
+github_alerts = true
+
+# 将 :smile: 等 Emoji 短代码渲染为真正的 Emoji。
+render_emoji = true
+
+# 所有外部链接默认在新标签页打开。
+external_links_target_blank = true
+
+# 为外部链接添加 rel="nofollow"。
+external_links_no_follow = true
+
+# 为外部链接添加 rel="noreferrer"。
+external_links_no_referrer = true
 
 [markdown.highlighting]
+# 内置语法高亮主题。
 theme = "catppuccin-mocha"
 
 [extra]
+
+# 顶部导航栏。
+# name_en 对应 default_language = "en"。
 header_nav = [
     { url = "/", name_en = "/home/" },
-    { url = "/about", name_en = "/about/" },
-    { url = "/journal", name_en = "/journal/" },
     { url = "/blog", name_en = "/blog/" },
+    { url = "/about", name_en = "/about/" },
 ]
 
+# 首页显示页面列表。
+list_pages = true
+
+# 在文章中生成目录（Table of Contents）。
+toc = true

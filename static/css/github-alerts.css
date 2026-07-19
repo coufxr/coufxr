@@ -1,0 +1,95 @@
+/* ==========================================================================
+   GitHub Alerts
+   Only override the necessary styles of Anemone blockquote.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Common
+   -------------------------------------------------------------------------- */
+
+blockquote[class^="markdown-alert-"] {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    --alert-color: var(--accent);
+
+    /* 仅覆盖必要项 */
+    border-inline-start-color: var(--alert-color);
+    font-style: normal;
+}
+
+blockquote[class^="markdown-alert-"] p {
+    font-style: normal;
+}
+
+blockquote[class^="markdown-alert-"]::before {
+    display: block;
+
+    margin-bottom: .35rem;
+
+    color: var(--alert-color);
+
+    font-size: .95rem;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Note
+   -------------------------------------------------------------------------- */
+
+blockquote.markdown-alert-note {
+    --alert-color: #4493f8;
+}
+
+blockquote.markdown-alert-note::before {
+    content: "ⓘ Note";
+}
+
+/* --------------------------------------------------------------------------
+   Tip
+   -------------------------------------------------------------------------- */
+
+blockquote.markdown-alert-tip {
+    --alert-color: #3fb950;
+}
+
+blockquote.markdown-alert-tip::before {
+    content: "✓ Tip";
+}
+
+/* --------------------------------------------------------------------------
+   Important
+   -------------------------------------------------------------------------- */
+
+blockquote.markdown-alert-important {
+    --alert-color: #ab7df8;
+}
+
+blockquote.markdown-alert-important::before {
+    content: "✦ Important";
+}
+
+/* --------------------------------------------------------------------------
+   Warning
+   -------------------------------------------------------------------------- */
+
+blockquote.markdown-alert-warning {
+    --alert-color: #d29922;
+}
+
+blockquote.markdown-alert-warning::before {
+    content: "⚠ Warning";
+}
+
+/* --------------------------------------------------------------------------
+   Caution
+   -------------------------------------------------------------------------- */
+
+blockquote.markdown-alert-caution {
+    --alert-color: #f85149;
+}
+
+blockquote.markdown-alert-caution::before {
+    content: "⛔ Caution";
+}

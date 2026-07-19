@@ -1,0 +1,54 @@
+# 站点的基础 URL；这是唯一必须配置的变量。
+base_url = "https://example.com"
+
+# 站点标题和描述；默认用于 feed。
+title = "coufxr's blog"
+description = "今夜星光灿烂"
+
+# 默认语言；用于 feed。
+default_language = "en"
+
+# 站点使用的主题。
+theme = "anemone"
+
+# 如需覆盖默认输出目录 `public`，可设置为其他值（如："docs"）
+output_dir = "public"
+
+# 启用后，在（重新）构建时会保留输出目录根级别的点文件。
+# 启用此选项后，重建时也不会删除输出文件夹本身。
+preserve_dotfiles_in_output = false
+
+# 设为 "true" 时，站点根目录下 `sass` 目录中的 Sass 文件将被编译。
+# 主题目录中的 Sass 文件始终会被编译。
+compile_sass = true
+
+# 设为 "true" 时，会从 `default_language` 的页面和章节内容构建搜索索引。
+build_search_index = false
+
+# 页面的默认作者
+author = "coufxr"
+
+# 站点的分类法（taxonomy）及其默认语言的配置
+# 示例：
+#     taxonomies = [
+#       {name = "tags", feed = true}, # 每个标签将有各自的 feed
+#       {name = "tags"}, # 同名分类法可以在多种语言中使用
+#       {name = "categories", paginate_by = 5},  # 每个分类项每页 5 条
+#       {name = "authors"}, # 基本定义：无 feed 或分页
+#     ]
+#
+taxonomies = [{ name = "tags" }, { name = "categories" }]
+
+[markdown]
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+header_nav = [
+    { url = "/", name_en = "/home/" },
+    { url = "/about", name_en = "/about/" },
+    { url = "/journal", name_en = "/journal/" },
+    { url = "/blog", name_en = "/blog/" },
+]
+

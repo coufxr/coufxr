@@ -39,7 +39,6 @@ generate_sitemap = true
 #
 taxonomies = [
     { name = "tags", feed = true },
-    { name = "categories" },
 ]
 
 [markdown]
@@ -68,7 +67,8 @@ theme = "catppuccin-mocha"
 # name_en 对应 default_language = "en"。
 header_nav = [
     { url = "/", name_en = "/home/" },
-    { url = "/blog", name_en = "/blog/" },
+    { url = "/tags", name_en = "/tags/" },
+    { url = "/archive", name_en = "/archive/" },
     { url = "/about", name_en = "/about/" },
 ]
 

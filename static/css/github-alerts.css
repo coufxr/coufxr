@@ -24,11 +24,11 @@ blockquote[class^="markdown-alert-"] p {
 blockquote[class^="markdown-alert-"]::before {
     display: block;
 
-    margin-bottom: .35rem;
+    margin-bottom: 0.35rem;
 
     color: var(--alert-color);
 
-    font-size: .95rem;
+    font-size: 0.95rem;
     font-weight: 600;
     font-style: normal;
     line-height: 1.4;

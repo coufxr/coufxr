@@ -15,9 +15,7 @@
     {% if post.date %}
     <li>
         <a href="{{ post.permalink }}">{{ post.title }}</a>
-        <span class="date">
-            {{ post.date | date(format="%Y-%m-%d") }}
-        </span>
+        <span class="date"> {{ post.date | date(format="%Y-%m-%d") }} </span>
     </li>
     {% endif %}
     {% endfor %}

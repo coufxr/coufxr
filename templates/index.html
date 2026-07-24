@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="section-content">
+        {{ section.content | safe }}
+    </div>
+
+    {% if config.extra.list_pages %}
+    <hr class="posts-divider">
+    <ul class="posts home-posts">
+        {% for page in section.pages %}
+        <li class="post-item">
+            <div class="post-header">
+                <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
+                {% if page.date %}
+                <time class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</time>
+                {% endif %}
+            </div>
+            {% if page.description or page.taxonomies.tags %}
+            <div class="post-meta">
+                {% if page.description %}
+                <p class="post-desc">{{ page.description }}</p>
+                {% endif %}
+                {% if page.taxonomies.tags %}
+                <div class="post-tags">
+                    {% for tag in page.taxonomies.tags %}
+                    <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}" class="post-tag">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if paginator %}
+        {% include "partials/pagination.html" %}
+    {% endif %}
+{% endblock %}

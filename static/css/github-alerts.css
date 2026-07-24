@@ -8,13 +8,17 @@
    -------------------------------------------------------------------------- */
 
 blockquote[class^="markdown-alert-"] {
-    margin-inline-start: 0;
-    margin-inline-end: 0;
+    margin: 1rem 0;
+    padding: 0.5rem 1em;
     --alert-color: var(--accent);
 
     /* 仅覆盖必要项 */
     border-inline-start-color: var(--alert-color);
     font-style: normal;
+}
+
+blockquote[class^="markdown-alert-"] > :last-child {
+    margin-bottom: 0 !important;
 }
 
 blockquote[class^="markdown-alert-"] p {
@@ -23,11 +27,9 @@ blockquote[class^="markdown-alert-"] p {
 
 blockquote[class^="markdown-alert-"]::before {
     display: block;
-
+    margin-top: 0.25rem;
     margin-bottom: 0.35rem;
-
     color: var(--alert-color);
-
     font-size: 0.95rem;
     font-weight: 600;
     font-style: normal;

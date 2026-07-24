@@ -8,6 +8,9 @@ title = "coufxr's blog"
 # 站点描述，用于 RSS Feed、SEO 以及 Open Graph。
 description = "今夜星光灿烂"
 
+# 站点默认语言。
+default_language = "en"
+
 # 使用的主题。
 theme = "anemone"
 
